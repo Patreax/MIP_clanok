@@ -15,7 +15,7 @@
 
 \pagestyle{headings}
 
-\title{Porovnanie metód modelovania webových aplikácií\thanks{Semestrálny projekt v predmete Metódy inžinierskej práce, ak. rok 2021/22, vedenie: Vladimír Mlynarovič}} % meno a priezvisko vyučujúceho na cvičeniach
+\title{Porovnanie metód modelovania webových aplikácií\thanks{Semestrálny projekt v predmete Metódy inžinierskej práce, ak. rok 2021/22, vedenie: Vladimír Mlynarovič}} 
 
 \author{Patrik Tomčo\\[2pt]
 	{\small Slovenská technická univerzita v Bratislave}\\
@@ -23,7 +23,7 @@
 	{\small \texttt{xtomco@stuba.sk}}
 	}
 
-\date{\small 16. októbra 2021} % upravte
+\date{\small 6. novembra 2021} 
 
 
 
@@ -41,7 +41,7 @@ Taktiež analyzuje techniky navrhované na špecifikovanie funkčných, dátový
 Kľúčové slová: koncepčný model, modelmi riadený vývoj, metódy, webová aplikácia, modelmi riadené webové inžinierstvo, softvér
 \\
 \\ 
-Čo pokladáte za významný problém v tejto oblasti a prečo (opora v literatúre)?\\
+%Čo pokladáte za významný problém v tejto oblasti a prečo (opora v literatúre)?\\
 
 
 \end{abstract}
@@ -50,22 +50,23 @@ Kľúčové slová: koncepčný model, modelmi riadený vývoj, metódy, webová
 \section{Úvod}
 
 Modelmi riadený vývoj (MDD: Model-Driven Developement) sa stáva stále viac a viac dôležitou a využívanou metódou vrámci softvérového inžinierstva. 
-MDD tvrdí, že softvérové systémy musia byť vyvíjané pomocou modelov. MDD proces zvyčajne začína požiadavkovou fázou, v ktorej sa definujú požiadavkové modely, z ktorých následne vzikne jeden alebo viacero koncepčných modelov~\ref{KM}. Tie majú za úlohu popísať systém bez prihliadnutia na technologické aspekty softvéru a sú neskôr využité v analytickej fáze\cite{Valderas:MDDE}. Práve týmto modelom a metódam, v ktorých su obsiahnuté,  je venovaný tento článok. Presnejšie porovnaniu jednotlivých metód a koncepčných metód z nich pozostavujúcich. Tento článok sa zaoberá popísaním rôznych MDWE (Model-Driven Web Engineering) metód. Tieto metódy a koncepčné modely článok porovnáva z pohľadu MDD, ako aj z pohľdaju funkcionality a navigácie v rámci webových aplikácií a požiadaviek používateľa na spomenutých stránkach. V dnešnej dobe existuje enormné množstvo metód zaoberajúcich sa vývojom webových aplikácií. Preto by si popísanie všetkých metód dopodrobna vyžadovalo príliš veľké úsilie. Tento čánok sa preto venuje len redukovanje množine metód, aby bolo možné sa im viac dopodrobna venovať. Metódy, ktorým sa článok primárne venuje sú OOHDM(Obejct-Oriented Hypermedia Design Model), OOWS(Object Oriented Web Solutions) a WSDM(Web Site Design Method). Každá z týchto metód predstavuje koncepčné modely, ktoré nám umožnujú popísať webové aplikácie technologicky nezávislým spôsobom. "Tieto metódy boli úspešne aplikované vo vývoji viacerých webových aplikácií, čo je dôkazom toho, že implementácia konštruovania webových aplikácií pomocou koncepčných modelov a ich neskoršie prepísanie do kódu je možné".\cite{Valderas:MDDE}\\
+MDD tvrdí, že softvérové systémy musia byť vyvíjané pomocou modelov. MDD proces zvyčajne začína požiadavkovou fázou, v ktorej sa definujú požiadavkové modely, z ktorých následne vzikne jeden alebo viacero koncepčných modelov~\ref{KM}. Tie majú za úlohu popísať systém bez prihliadnutia na technologické aspekty softvéru a sú neskôr využité v analytickej fáze\cite{Valderas:MDDE}. Práve týmto modelom a metódam, v ktorých su obsiahnuté,  je venovaný tento článok. Presnejšie porovnaniu jednotlivých metód a koncepčných metód z nich pozostavujúcich. Tento článok sa zaoberá popísaním rôznych MDWE (Model-Driven Web Engineering) metód. Tieto metódy a koncepčné modely článok porovnáva z pohľadu MDD, ako aj z pohľdaju funkcionality a navigácie v rámci webových aplikácií a požiadaviek používateľa na spomenutých stránkach. V dnešnej dobe existuje enormné množstvo metód zaoberajúcich sa vývojom webových aplikácií. Preto by si popísanie všetkých metód dopodrobna vyžadovalo príliš veľké úsilie. Tento čánok sa preto venuje len redukovanej množine metód, aby bolo možné sa im viac dopodrobna venovať. Metódy, ktorým sa článok primárne venuje sú OOHDM(Obejct-Oriented Hypermedia Design Model), OOWS(Object Oriented Web Solutions) a WSDM(Web Site Design Method). Každá z týchto metód predstavuje koncepčné modely, ktoré nám umožnujú popísať webové aplikácie technologicky nezávislým spôsobom. "Tieto metódy boli úspešne aplikované vo vývoji viacerých webových aplikácií, čo je dôkazom toho, že implementácia konštruovania webových aplikácií pomocou koncepčných modelov a ich neskoršie prepísanie do kódu je možné".\cite{Valderas:MDDE}\\
 
-Pre porozumenie tejto problematiky je veľmi dôležité vedieť, čo presne koncepčné modely predstavujú. Preto tento článok začne ich popisom. Ďalej bude pokračovať následovne. Sekcia 3 prezentuje prehľad popisovaných MDWE metód a ich bližší popis. Sekcia 4 sa venuje porovaniu týchto metód a koncepčným modelom z pohľadu MDD a funkcionality a navigácie v rámci  webových aplkácií. Sekcia 5 sa podrobnejšie venuje popisu MDA (Model-Driven Architecture) prístupu, ktorý je neskôr využitý v následujúcej sekcii. Sekcia 6 je venovaná metódam a modelom využivajúcim MDA prístup. Sekcia 7 slúži ako sumarizácia všetkého, čo sme zistili o danej problematike a posledná sekcia poskytuje prehľad bibliografie.\\
+Pre porozumenie tejto problematiky je veľmi dôležité vedieť, čo presne koncepčné modely predstavujú. Preto tento článok začne ich popisom. Ďalej bude pokračovať následovne. Sekcia 3 prezentuje prehľad popisovaných MDWE metód a ich bližší popis. Sekcia 4 sa venuje porovaniu týchto metód a koncepčným modelom z pohľadu MDD a funkcionality a navigácie v rámci  webových aplkácií. Sekcia 5 sa podrobnejšie venuje popisu MDA (Model-Driven Architecture) prístupu, ktorý je neskôr využitý v následujúcej sekcii. Sekcia 6 je venovaná porovnávaniu metód a modelov využivajúcich spomenutý MDA prístup. Sekcia 7 slúži ako sumarizácia všetkého, čo sme zistili o danej problematike a posledná sekcia poskytuje prehľad bibliografie.\\
 \\
 Ešte spomeniem MDA prístup
 \\
 \section{Koncepčné modely} \label{KM}
 
-Koncepčné modely webových aplikácií špecifikujú jej kompozíciu a navigáciu v nej\cite{Gkatouna:Patterns}. Kompozícia web stránky definuje, ktoré stránky tvoria hypertext a ich internú kompozíciu, ako aj možnosti používateľa na zaobchádzanie so systémom. Navigácia definuje rôzne spôsoby, ako môžu byť dané stránky navzájom prepojené linkami, ale aj zobrazenie postupnosti stránok, na základe používania zo strany používateľa, a obsahom vyobrazeným na stránke. Inými slovami, koncepčné modely webových aplikácií špecifikujú jej organizáciu jej front-end rozhrania v podobe stránok, dizajnových elexntov, ktoré sú prepojené linkami an uľahčenie navigácie na web stránke a manipulovania s ňou\cite{Gkatouna:Patterns}.
+Ako bolo spomenuté, táto sekcia sa venuje definícii koncepčných modelov. Pre spávne porozumenie neskoršej problematiky je znalosť týchto modelov veľmi dôležitá.\\
+Koncepčné modely webových aplikácií špecifikujú jej kompozíciu a navigáciu v nej\cite{Gkatouna:Patterns}. Kompozícia web stránky definuje, ktoré stránky tvoria hypertext a ich internú kompozíciu, ako aj možnosti používateľa na zaobchádzanie so systémom. Navigácia definuje rôzne spôsoby, ako môžu byť dané stránky navzájom prepojené linkami, ale aj zobrazenie postupnosti stránok, na základe používania zo strany používateľa, a obsahom vyobrazeným na stránke. Inými slovami, koncepčné modely webových aplikácií špecifikujú jej organizáciu jej front-end rozhrania v podobe stránok, dizajnových elementov, ktoré sú prepojené linkami na uľahčenie navigácie na web stránke a manipulovania s ňou\cite{Gkatouna:Patterns}.
 \\
 \\
 Možno ešte niečo napíšem o koncepčných modeloch
 
 \section{Prehľad MDWE metód}
 
-Následuje sekcia venujúca sa popísaniu troch vybraných MDWE (Model-Driven Web Development) metód. Tými sú, ako bolo spomenuté: OOHDM, OOWS , WSDM, Tieto metódy budú popísané chronologicky, podľa toho, v akom roku sa prvýkrát objavili v literatúre. Obrázok č.1 poukazuje na prehľad študovaných metód a chronologické usporiadnie podľa roku prvej publikácie. Tento článok sa venuje hlavne týmto metódam, pretože predstavujú techniky špeciálne vytvorené na špecifikovanie potrieb webových aplikácií.\cite{Valderas:MDDE}\\
+Následuje sekcia venujúca sa popísaniu troch vybraných MDWE (Model-Driven Web Development) metód. Tými sú, ako bolo spomenuté: OOHDM, OOWS , WSDM. Tieto metódy budú popísané chronologicky, podľa toho, v akom roku sa prvýkrát objavili v literatúre. Obrázok č.1 poukazuje na prehľad študovaných metód a chronologické usporiadnie podľa roku prvej publikácie. Tento článok sa venuje hlavne týmto metódam, pretože predstavujú techniky špeciálne vytvorené na špecifikovanie potrieb webových aplikácií.\cite{Valderas:MDDE}\\
 
 \begin{figure*}[tbh]
 \centering
@@ -77,13 +78,13 @@ Následuje sekcia venujúca sa popísaniu troch vybraných MDWE (Model-Driven We
 
 \subsection{OOHDM: Object Oriented Hypermedia Design Model} \label{OOHDM}
 
-OOHDM bolo vyvinuté pánmi Schwabe a Rossi v roku 1994. Bolo to jedno z prvých metodologických riešení pre vývoj webových aplikácií. OOHDM zdôrazňuje separáciu navigačných aspektov softvéru a od iných aspektov ako napríklad koncepčné aspekty a aspekty rozhrania. Ďalšie prístupy boli neskôr inšpirované touto myšlienkou separácií rôznych aspektov. "Nakoniec, je dôležité spomenúť, že OOHDM nie je uzatvorený prístup a je postupne rozširovaný a vylepšovaný."\cite{Valderas:MDDE}\\
+OOHDM bolo vyvinuté pánmi Schwabe a Rossi v roku 1994. Bolo to jedno z prvých metodologických riešení pre vývoj webových aplikácií. OOHDM zdôrazňuje separáciu navigačných aspektov softvéru od iných aspektov, ako napríklad koncepčné aspekty a aspekty rozhrania. Ďalšie prístupy boli neskôr inšpirované touto myšlienkou separácií rôznych aspektov. "Nakoniec, je dôležité spomenúť, že OOHDM nie je uzatvorený prístup a je postupne rozširovaný a vylepšovaný."\cite{Valderas:MDDE}\\
 
 Proces vývoja tohto prístupu je rozdelený do piatich hlavných fáz.
 
-- Zhromažďovanie požiadaviek. V tejto fáze sú definovaný užívatelia, ktorý používajú webovú aplikáciu, ako aj uživateľské potreby, ktoré musí webová aplikácia podporovať.\\
-- Koncepčný dizajn. Táto fáza pozostáva z koncepčnej schémy, v ktorej su popísané statické systémové aspekty.\\
-- Navigačný dizajn. V tejto fáze musí byť definovaný diagram navigačných tried a diagram navigačnej štruktúry. Prvý reprezentuje statické možnostinavigačného systému. Druhý, na druhej strane, rozširuje prvý diagram vrátane prístupovej štruktúry a navigačného kontextu.\\
+- Zhromažďovanie požiadaviek. V tejto fáze sú definovaní užívatelia, ktorí používajú webovú aplikáciu, ako aj uživateľské potreby, ktoré musí webová aplikácia podporovať.\\
+- Koncepčný dizajn. Táto fáza pozostáva z koncepčnej schémy, v ktorej sú popísané statické systémové aspekty.\\
+- Navigačný dizajn. V tejto fáze musí byť definovaný diagram navigačných tried a diagram navigačnej štruktúry. Prvý reprezentuje statické možnosti navigačného systému. Druhý, na druhej strane, rozširuje prvý diagram o prístupové štruktúry a navigačný kontext.\\
 - Abstraktný dizajn rozhrania. Táto fáza definuje opis užívaťeľského rozhrania abstraktným spôsobom.\\
 - Implementácia. V tejto fáze je webová aplikácia implementovaná. Táto implementácia je založená na predchádzajúcich modeloch.\cite{Valderas:MDDE}\\
 
