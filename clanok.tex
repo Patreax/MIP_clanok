@@ -112,7 +112,7 @@ Vývojový proces tohto prístupu je rozdelený do piatich hlavných fáz:\\
 - Špecifikácia poslania. V tejto fáze je potrebné definovať účel a predmet webovej aplikácie. Tatiež musí byť poukázané na cieľové publikum, pre kroté je daná  aplikácia vyvíjaná.\\
 - Modelovanie publika. V druhej fáze sú špecifikovaný užívatelia a sú následne rozdelení do skupín. Toto je vykonané za účelom študovanie systémových požiadaviek na základe každej skupiny.\\
 - Koncepčný dizajn. V tretej fáze je vytvorený diagram tried a navigačný model. Diagram tried reprezentuje statický model systému a navigačný model popisuje možnosti navigácie vo webovej aplikácii. 
-- Implementačný dizajn. Počas štvrtej fázy sú definované koncepčné dizajnové modely. Tieto modely sú  následne doplnené o informácie, potrebné na samotnú implementáciu. Takéto informácie sú napríklad model štruktúry stránky alebo prezentačný model.\\
+- Implementačný dizajn. Počas štvrtej fázy sú definované koncepčné dizajnové modely. Tieto modely sú následne doplnené o informácie, potrebné na samotnú implementáciu. Takéto informácie sú napríklad model štruktúry stránky alebo prezentačný model.\\
 
 \section{Porovnanie MDWE metód} \label{ina}
 
@@ -127,9 +127,27 @@ Hlavné porovnanie MDWE metód + tabuľky
 
 \section{Popis MDA prístupu}
 
+
+MDA prístup je široko využívaný softvérovými inžiniermi pri vyvíjaní webových aplikácií.\\
+Častokrát, pri MDD metódach, je interakcia medzi používateľom a systémom nie presne špecifikovaná. Často je rozhranie systému generované pre rozličné platformy (stolný počítač, web, mobilný telefón..) z rovnakého modelu. Tým sa vytvára priestor pre rozličné komplikácie spojené so systémovým rozhraním. V tom prípade je nutné klásť väčší dôraz na presnejšie špecifikovanie koncepčných modelov. Preto je v tomto prípade MDA prístup veľmi zaujímavým riešením.  ////Citovat clanok An Abstract Interaction Model for a MDA Software Production 
+Method
+MDA (Model-Driven Architecture) je prístup využívaný v modelovo založenom softvérovom vývojárstve a predstavuje viacero modelov. Tieto modely majú za úlohu vylepšiť a spresniť proces vývoja softvéru. Prvým z nich je CIM (Computation-Independent model), v preklade model nezávyslý na výpočte.  Tento model neberie ohľad na výpočtové aspekty spojené s modelovaním systému a je zameraný výlučne na požiadavky systému a jeho prostredia. Ďalším modelom je PIM (Platform-Independent Model), ktorý popisuje interakciu s danou platformou, bez toho, aby uvažoval technologické aspekty platformy. Preto nakoniec nasleduje posledný model PSM (Platform Specific Model). Tento model vychádza z predošlého modelu a už presne popisuje technologické požiadavky rôznych platfórm, na ktoré bude webová aplikácia následne implementovaná. Nakoniec je vytvorený model kódu z PSM modelu. Transformácia týchto modelov je automatická alebo polo-automatická. To záleží od MDA prostredia, ktoré ich podporuje.\cite{Pastor:MDD}
+
 \section{Porovnanie MDWE metód vyžívajúcich MDA prístup}
 
-Popíšem MDA prístup a potom využitie tohto prístupu v spomenutých metódach
+Postupom rokov sa začali prejavovať slabšie stránky predošle spomenutých metód. Jedna z nich bola spomenutá v predchádzajúcej sekcii. Preto za účelom odtránenia týchto nedokonalostí sa začal využívať MDA prístup v spojení so spomenutými metódami. Tak vznikli hybridné metódy, ktoré využívajú techniky a postupy obsiahnuté v základných metódach, ale sú obohatené o postupy definované v MDA paradigme. Takýmito hybridnými metódami sú napríklad OOHDMDA, OOWS a WSDMA. Vďaka implementovaniu týchto postupov sa stávajú dané metódy efektívnejšie v oblasti vývoja webových aplikácií.\\
+Ďalej budú tieto metódy bližšie špecifikované a porovnané. 
+
+\subsection{OOHDMDA}
+
+OOHDMA je modelovacia metóda, ktorá kombinuje vlastnosti OOHDM metódy a prvky MDA prístupu. Jej hlavným cieľom je transformácia koncepčného modelu základnej metódy na PIM model využitím ... Ďalej nasleduje transformáca na PSM model využitím servlet-based dacoho. 
+
+\subsection{OOWS}
+
+\subsection{WSDMDA}
+
+WSDMDA je MDA-založená metóda na vývoj webových aplikácií. Ako z názvu vyplýva, tak je založená na existujúcej WSDM metóde spomenutej vyššie v článku. WSDMDA zvyšuje efektivitu základnej metódy tým, že poskytuje vyššiu rýchlosť generovania komplexného kódu ako tradičná metóda. Výsledkom tejto hybridnej metódy oproti základnej je taktiež schopnosť narábať aj s dynamickou webovou aplikáciou namiesto narábania jedine so statickou. Toto je doshianuté vďaka tomu, že vrchná časť webovej stránky sa mení v závislosti od používateľských záujmov, kým druhá časť ostáva taká, aká bola definovaná webovýmm dizajnérom. Profil týchto používateľských záujmov je využívaný počas chodu webovej aplikácie, ze cieľom zobrazovania špeciálnych položiek, ktoré môžu byť využité ako promócia nového produktu alebo ako reklama špecifickej témy v danej oblasti.\\
+Táto metóda prerába koncepčný model tradičnej metódy, za účelom využitia tohto modelu ako PIM model, a to vďaka pridaniu používateľského záujmového profilu. Ďalej kladie veľký dôraz na následnú transformáciu na PSM model, spresnením PIM modelu.    ////cite enhanced WSDM 
 
 \section{Zhrnutie}
 
