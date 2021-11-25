@@ -90,7 +90,7 @@ Proces vývoja tohto prístupu je rozdelený do piatich hlavných fáz:\\
 
 \subsection{OOWS: Object Oriented Web Solutions} \label{OOWS}
 Ďalej nasleduje novšia metóda s názvom OOWS. Síce sa nejedná o následujúcu metódu vrámci chroronolockej postupnosti, ale článok ju popisuje priamo po OOHDM metóde, pretože obidve tieto metódy majú rovnaký základ, a to objektovo-orientovaný prístup.\\ 
-Táto metóda bola prvýkrát prezentovaná pánmi Joan Fons a Oscar Pastor v roku 2000. Ide o rozšírenie objektovo-orientovaného prístupu pri vývoji webových aplikácií. Narozdiel od OO-H (object-oriented hypermedia) prístupu, táto metóda je založená iba na objektovo-oriantovanej báze. "Toto robí OOWS jednu z mála MDD metód, ktoré poskytujú podporu pre automatické generovanie rozhraní webových aplikácií, ako aj plne operatívnu funkčnosť vyjadrenú z modelov."\cite{Valderas:MDDE}\\
+Táto metóda bola prvýkrát prezentovaná pánmi Joan Fons a Oscar Pastor v roku 2000. Ide o rozšírenie objektovo-orientovaného prístupu pri vývoji webových aplikácií. Narozdiel od OO-H (object-oriented hypermedia) prístupu, táto metóda je založená iba na objektovo-orientovanej báze. "Toto robí OOWS jednu z mála MDD metód, ktoré poskytujú podporu pre automatické generovanie rozhraní webových aplikácií, ako aj plne operatívnu funkčnosť vyjadrenú z modelov."\cite{Valderas:MDDE}\\
 
 Vývojivý proces obsiahnutý v tomto prístupe je rozdelený na tri hlavné fázy:\\
 - Analýza požiadaviek. V tejto fáze sú špecifikované požiadavky webovej aplikácie pomocou modelov, ktoré sú založené na koncepte úloh (concept of task). Je dôležité poznamenať, že táto fáza bola uvedená do praxe až po pridaní rôznych rozšírení do tejto metódy.\\
@@ -136,7 +136,7 @@ MDA (Model-Driven Architecture) je prístup využívaný v modelovo založenom s
 \section{Porovnanie MDWE metód vyžívajúcich MDA prístup}
 
 Postupom rokov sa začali prejavovať slabšie stránky predošle spomenutých metód. Jedna z nich bola spomenutá v predchádzajúcej sekcii. Preto za účelom odstránenia týchto nedokonalostí sa začal využívať MDA prístup v spojení so spomenutými metódami. Tak vznikli hybridné metódy, ktoré využívajú techniky a postupy obsiahnuté v základných metódach, ale sú obohatené o postupy definované v MDA paradigme. Takýmito hybridnými metódami sú napríklad OOHDMDA a WSDMDA. Vďaka implementovaniu týchto postupov sa stávajú dané metódy efektívnejšie v oblasti vývoja webových aplikácií.
-OOWS metóda je v tejto časti vynechaná, pretože implementácia MDA je pri objektovo-orientovaných metódach čiastočne podobná (napr. obidve využívajú externé nástroje), a preto bude popísaná len OOHDM metóda.\\
+OOWS metóda je v tejto časti vynechaná, pretože implementácia MDA je pri objektovo-orientovaných metódach čiastočne podobná (napr. obidve využívajú externé nástroje), a preto bude spomedzi objektovo-orientovaných metód popísaná len OOHDM metóda.\\
 Ďalej budú tieto metódy bližšie špecifikované a porovnané. 
 
 \subsection{OOHDMDA}
@@ -145,14 +145,16 @@ OOHDMDA je modelovacia metóda, ktorá kombinuje vlastnosti OOHDM metódy a prvk
 
 \subsection{WSDMDA}
 
-WSDMDA je MDA-založená metóda na vývoj webových aplikácií. Ako z názvu vyplýva, tak je založená na existujúcej WSDM metóde spomenutej vyššie v článku. WSDMDA zvyšuje efektivitu základnej metódy tým, že poskytuje vyššiu rýchlosť generovania komplexného kódu ako tradičná metóda. Výsledkom tejto hybridnej metódy oproti základnej je taktiež schopnosť narábať aj s dynamickou webovou aplikáciou, namiesto narábania jedine so statickou. Toto je doshianuté vďaka tomu, že vrchná časť webovej stránky sa mení v závislosti od používateľských záujmov, kým druhá časť ostáva taká, aká bola definovaná webovým dizajnérom. Profil týchto používateľských záujmov je využívaný počas chodu webovej aplikácie, ze cieľom zobrazovania špeciálnych položiek, ktoré môžu byť využité ako promócia nového produktu alebo ako reklama špecifickej témy v danej oblasti.\\
+WSDMDA je MDA-založená metóda na vývoj webových aplikácií. Ako z názvu vyplýva, tak je založená na existujúcej WSDM metóde spomenutej vyššie v článku. WSDMDA zvyšuje efektivitu základnej metódy tým, že poskytuje vyššiu rýchlosť generovania komplexného kódu ako tradičná metóda. Výsledkom tejto hybridnej metódy oproti základnej je taktiež schopnosť narábať aj s dynamickou webovou aplikáciou, namiesto narábania jedine so statickou. Toto je doshianuté vďaka tomu, že vrchná časť webovej stránky sa mení v závislosti od používateľských záujmov, kým druhá časť ostáva taká, aká bola definovaná webovým dizajnérom. Profil týchto používateľských záujmov je využívaný počas chodu webovej aplikácie, za cieľom zobrazovania špeciálnych položiek, ktoré môžu byť využité ako promócia nového produktu alebo ako reklama špecifickej témy v danej oblasti.\\
 Táto metóda prerába koncepčný model tradičnej metódy, za účelom využitia tohto modelu ako PIM model, a to vďaka pridaniu používateľského záujmového profilu. Ďalej kladie veľký dôraz na následnú transformáciu na PSM model, spresnením PIM modelu.\cite{Mukhtar:WSDMDA}\\
-\\
-Tu bude porovannie a tabulka
+
+\paragraph{Porovnanie}
+
+Spomenuté metódy sa od seba líšia ako v základnom, tak aj v tomto rozšírenom tvare. Tu je ale možné presne vidieť ich rozdielne prístupy k MDA paradigme. Prvá fáza je rovnaká, transformácia koncepčného modelu na PIM model. Kým OOHDMDA metóda ku koncepčnému modelu pridáva ďalší model, špecificky BMS (Behavioral Semantics Model), tak WSDMDA sa snaží upriamiť ešte väčšiu pozornosť na používateľa pridaním používateľského profilu. Neskôr nasleduje transformácia na PSM model. Tá sa taktiež u oboch kandidátov líši. OOHDMDA využíva rôzne nástroje za účelom prerobenia PIM sa sevrlet založenú platformu. Tieto transformácie taktiež zahrňujú navigačné a koncepčné transformácie\cite{Mukhtar:WSDMDA}. Na druhej strane WSDMDA vytvára všeobecný PSM model, ktorý presne špecifikuje technologické požiadavky danej platformy. Obrázok č.3 slúži ako tabuľka na garfické zhrnutie tohto porovnania.
 
 \begin{figure*}[tbh]
 \centering
-\includegraphics[scale=0.6]{./Visuals/OOHDMDA VS WSDMDA.png}
+\includegraphics[scale=0.7]{./Visuals/OOHDMDA VS WSDMDA.png}
 \caption{Porovnanie OOHDMDA a WSDMDA metódy (prevzatý\cite{Mukhtar:WSDMDA}).}
 \label{OOHDMDA VS WSDMDA}
 \end{figure*}
