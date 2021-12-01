@@ -59,7 +59,7 @@ Ešte spomeniem MDA prístup
 \section{Koncepčné modely} \label{KM}
 
 Ako bolo spomenuté, táto sekcia sa venuje definícii koncepčných modelov. Pre spávne porozumenie neskoršej problematiky je znalosť týchto modelov veľmi dôležitá.\\
-Koncepčné modely webových aplikácií špecifikujú jej kompozíciu a navigáciu v nej\cite{Gkatouna:Patterns}. Kompozícia web stránky definuje, ktoré stránky tvoria hypertext a ich internú kompozíciu, ako aj možnosti používateľa na zaobchádzanie so systémom. Navigácia definuje rôzne spôsoby, ako môžu byť dané stránky navzájom prepojené linkami, ale aj zobrazenie postupnosti stránok, na základe používania zo strany používateľa, a obsahom vyobrazeným na stránke. Inými slovami, koncepčné modely webových aplikácií špecifikujú organizáciu jej front-end rozhrania v podobe stránok, dizajnových elementov, ktoré sú prepojené linkami na uľahčenie navigácie na web stránke a manipulovania s ňou\cite{Gkatouna:Patterns}.
+Koncepčné modely webových aplikácií špecifikujú jej kompozíciu a navigáciu v nej\cite{Gkatouna:Patterns}. Kompozícia web stránky definuje, ktoré stránky tvoria hypertext a ich internú kompozíciu, ako aj možnosti používateľa na zaobchádzanie so systémom. Navigácia definuje rôzne spôsoby, ako môžu byť dané stránky navzájom prepojené linkami, ale aj zobrazenie postupnosti stránok, na základe používania zo strany používateľa, a obsahom vyobrazeným na stránke. Inými slovami, koncepčné modely webových aplikácií špecifikujú organizáciu jej front-end rozhrania v podobe stránok, dizajnových elementov, ktoré sú prepojené linkami na uľahčenie navigácie na web stránke a manipulovania s ňou.\cite{Gkatouna:Patterns}
 \\
 \\
 Možno ešte niečo napíšem o koncepčných modeloch
@@ -70,7 +70,7 @@ Následuje sekcia venujúca sa popísaniu troch vybraných MDWE (Model-Driven We
 
 \begin{figure*}[tbh]
 \centering
-\includegraphics[scale=0.4]{./Visuals/Chronologický prehľad MDWE metód.pdf}
+\includegraphics[scale=0.4]{./Visuals/Chronologicky prehlad MDWE metod.pdf}
 \caption{Chronologický prehľad MDWE metód (upravený\cite{Valderas:MDDE}).}
 \label{Prehľad}
 \end{figure*}
@@ -116,7 +116,41 @@ Vývojový proces tohto prístupu je rozdelený do piatich hlavných fáz:\\
 
 \section{Porovnanie MDWE metód} \label{ina}
 
-Hlavné porovnanie MDWE metód + tabuľky
+Predslov k porovnaniu. Popis co je ot UID (User interaction diagram)  which allow us to consider navigational aspects at the
+requirements level. For each use case, a UID is defined. Each UID graphically
+describes the interaction between the users and the system without considering
+specific aspects of the user interface.
+
+\subsection{OOHDM}
+
+Funkčné požiadavky sú explicitne podporované touto metódou. Navrhovaná technika na ich špecifikovanie je takzvaný ''use case'' diagram. Ďalšie špecifikovanie činností spojených s týmto diagramom umožňuje popis postupnosti činností, ktoré vykoná používateľ alebo systém. Čiže táto metóda zachytáva presnú postupnosť činností, ktoré sa vykonajú FR2. Tento ''use case'' diagram môže byť taktiež rozšírený o pred- a po- podmienky, ktoré poskytujú podporu pre zachytenie vstupov a definovanie vzťahov medzi vstupmi a výstupmi FR1 FR5. \cite{Valderas:MDDE}
+
+Dátové požiadavky tejto metódy sú čiastočne podporené UID diagramami. Tie presne popisujú dáta, ku ktorým má používateľ prístup, aj keď dáta, ktoré môžu byť sprístupnené systému nie sú správne popísané. Rovnako, UID špecifikuje údaje, ktoré systém musí uložiť. Ide práve o tie, ktoré sú prístupné používateľovi. Dáta, ktoré sú požadované iba pre systémové operácie, nie sú špecifikované DR3 DR4. \cite{Valderas:MDDE}
+
+Navigačné požiadavky sú explicitne podporované touto metódou. Navrhovaná technika na ich definovanie je znova založená na UID diagramoch. Rôzne interakcie medzi používateľom a systémom popisujú informácie, ktoré sa majú zobraziť. O čo viac, tieto interakcie a vzťahy medzi nimi povoľujú používateľovi jednoduchú navigáciu medzi týmito informáciami NR1 NR2. Nakoniec, interakcie sú doplnené o mechanizmy, ktoré poukazujú na možnosť aktivovania rôznych funkcií NR4.\cite{Valderas:MDDE}
+
+Ohodnotenie z MDD perspektívy: Táto metóda prezentuje usmernenia za účelom pomoci pri definícii koncepčnej schémy z UID. Tie sú definované zo skupiny pravidiel, ktoré boli prednesené autormi Patrícia Vilain a Daniel Schwabe. Tieto pravidla poukazujú na možnosť definovania koncepčnej schémy z UID diagramu. 
+Nevýhodou je, že sú popísané pomocou materinského jazyka, bez predom definovaných formálnych pravidiel. Preto často dochádza k nejakej mierne nejednoznačnosti. \cite{Valderas:MDDE}
+
+Silné a slabé stránky: Hlavná silná stránka tohto prístupu je založená na kombinácii dobre-známom ''use case'' popise, ktorý povoľuje definovanie funkčných požiadaviek webových aplikácií vďaka pomoci UID diagramov. Tie povoľujú vizuálny popis navigačných a dátových požiadaviek. OOHDM je tiež jedna z mála metód, ktoré poskytujú spomenutý postup špeciálne pre webové aplikácie. 
+Silná stránka tejto metódy je taktiež jej slabou stránkou, a to v tom zmysle, že iba UID technika je definovaná pre MDD poučitie. Usmernenia na preberanie koncepčných modelov sú taktiež zahrnuté iba v UID diagramoch. \cite{Valderas:MDDE}
+
+
+\subsection{OOWS}
+
+Funkčné požiadavky sú plne podporované touto metódou. Tie sú špecifikované pomocou takzvaných ''listových úloch''. na jednej strane, validácia vstupov a vzťahy medzi vstupmi a výstupmi môžu bzť definované ako ohraničenie v takzvanej charakterizačnej šablóne FR1 FR5.  Na druhej strane, postupnosť operácií môže byť popísaná ako postupnosť systémových aktivít. Tie sú definované v diagrame aktivít FR2. \cite{Valderas:MDDE}\\
+
+Dátové požiadavky sú explicitne podporované touto metódou. Na špecifikovanie sú využité informačné šablóny. Šablóny určené rôznym entitám povoľujú poukazovať na znaky, ktoré musí systém uložiť pre každú entitu a vzťahy medzi nimi. Tento bod je podložený pripojením typu atribútu na ďalšiu entitu DR1 DR4. Dátová dostupnosť je popísaná ako spojenia systémových aktivít definovaných v diagrame aktivít. To znamená, že dáta môžu byť sprístupnené systémovým aktivitám. Dátová dostupnosť je taktiež charakterizovaná používateľmi pridruženými ku každej úlohe z charakterizačnej šablóny. \cite{Valderas:MDDE}\\
+
+Navigačné požiadavky sú  taktiež expliicitne podporované OOWS metódou. Tie sú popísané v diagrame aktivít. Na popis navigačných požiadaviek je dôležité zaviesť pojem IPs (Interaction Point). Tieto interakčné body reprezentujú moment počas výkonu úlohy, v ktorom si systém a používateľ vymieňa informácie. Na jednej strane, časové vzťahy tejto metódy všeobecne opisujú navigáciu používateľa za informáciami.  Toto je zabezpečené vďaka diagramom aktivít, ktorý predpisuje navigáciu ako postupnosť interakčných bodov NR2. Zobrazené informácie sú definované ako entity pridružené ku každému výstupu interakčných bodov. Navyše sú tieto informácie detailne popísané pomocou šablón pripojených k týmto interakčným bodom.  \cite{Valderas:MDDE}
+
+Ohodnotenie z MDD pespektívy: Techniky navrhované OOWS metódou na špecifikovanie požiadaviek sa skladajú z diagramov, ako napríklad diagram aktivít a z textovej šablóny.No aj keĎ ide o textovú šablónu, tak tá má striktne definovanú štruktúru. Ide o vylepšenie nedostatkov, s ktorými je možné stretnúť sa v OHDM metóde. Toto precízne definovanie dovoľuje celému OOWS požiadavkovému modelu zapadnút do presného metamodelu, v ktorom sú popísané všetky koncepty potrebné na špecifikovanie podporovaných požiadaviek. \cite{Valderas:MDDE}
+
+Silné a slabé stránky: Hlavnou silnou stránkou tejto metódy je, že je špeciálne vytvorená na špecifikovanie webových aplikácií. Taktiež ponúka nové techniky orientované na podporu aspektov súvisiacich s webovými apikáciami, ako napríklad navigácia. Ďalšia výhoda tejto metódy je, že navigačné schopnosti sú popísané globálne. Toto sa líši od iných techník, ktoré sú založené takzvaných prípadoch použitia (use cases), ktoré podporujú iba obmedzený pohľad na aspekt navigácie, keďže navigačné požiadavky sú popísané jednotlivo pre všetky prípady využitia. Neposlednou výsadou tejto metódy je to, že je plne orientovaná na podporu MDD prístupov webových aplikácií. 
+Hlavnou nevýhodou tejto funkcie je ale možnosť priveľkej zložitosti požiadavkových modelov. Na dôkladné popísanie týchto modelov je potrebné mnoho zložitých elementov. Taktiež je vhodné spomenúť, že diagram aktivít je doplnený o grafické elementy, ktoré nepochádzajú priamo zo štandardného UML diagramu aktivít. Preto tento diagram môže vyzerať zložito pre netrénovaných ľudí. \cite{Valderas:MDDE}
+
+\subsection{WSDM}
+
 
 \begin{figure*}[tbh]
 \centering
