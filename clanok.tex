@@ -116,6 +116,12 @@ Vývojový proces tohto prístupu je rozdelený do piatich hlavných fáz:\\
 
 \section{Porovnanie MDWE metód} \label{ina}
 
+Táto časť je dedikovaná porovnanie analyzozavých metód a to OOHDM, OOWS a WSDM. Článok sa sústredí na špecifikovanie piatich hlavných elementov pri každej metóde. Týmito elementami sú funkčné požiadavky, dátové požiadavky, navigačné požiadavky, ohodnotenie z MDD perspektívy a ohodnotenie silných a slabých stránok danej metódy. Funkčné, dátové a navigačné požiadavky budú analyzované na základe špecifických kritérií, ktoré sú rôzne pre všetky typy požiadaviek. Tieto kritériá sú nasledovné:\\
+Funkčné požiadavky:\\
+- overenie vstupov -FP1\\
+- presná postupnosť operácií - FP2\\
+- vzťahy medzi vstupmi a výstupmi -FP3\\
+
 Predslov k porovnaniu. Popis co je ot UID (User interaction diagram)  which allow us to consider navigational aspects at the
 requirements level. For each use case, a UID is defined. Each UID graphically
 describes the interaction between the users and the system without considering
@@ -151,6 +157,16 @@ Hlavnou nevýhodou tejto funkcie je ale možnosť priveľkej zložitosti požiad
 
 \subsection{WSDM}
 
+Funkčné požiadavky tejto metódy sú bezprostredne podporované. Sú špecifikované pomocou informálneho písomného popisu, ktorý je priradený každej triede publika, ale aj pomocou dagramu úloh. Tento diagram úloh povoľuje špecifikáciu postupnosti úloh aplikácie FR2. Ďalšia časť kritérií nie je podporovaná diagramami úloh, ale móžu byť definované písomným popisom. Autori tejto metódy ďalej ale približujú, ako tento popis využiť na popísanie nepodporovaných kritérií. Preto ich môžeme považovať za čiastočne podporované. 
+
+Dátové požiadavky sú explicitne podporované WSDM metódou. Tie sú taktiež špecifikované pomocou písomných popisov s využitím klasického jazyka. Preto nie je presne definované, aké konkrétne dátové požiadavky táto metóda vyžaduje. Záleží na softvérovom analytikovi, aby využil voľnosť tohto jazyka a popísal tieto požiadavky.   
+
+Navigačné požiadavky sú presne podporované touto metódou. Rozoberané kritériá tohto článku môžu byť definované opätovne pomocou písomného popisu a diagramu úloh. Diagramy úloh môžu byť využité na špecifikovanie postupnosti interakcií, ktoré vykonáva používateľ v súvislosti so systémom. Po definitívnom pomenovaní týchto častí interakcií je možné popísať, ako dokáže používateľ vyhľadať informácie NR2. Vďaka týmto diagramom je taktiež realizovateľné popísanie toho, akým môze mať používateľ prístup k daným informáciám NR4. Aspekt vyobrazovania informácií môže byť doasiahnutí využitím písomného popisu NR1.
+
+Ohodnotenie z MDD perspektívy: Špecifikácia požidaviek navrhnutá WSDM metódou je založená na klasifikácii používateľov a na popise požiadaviek, spätých s každým používateľom. Definícia používateľských požiadaviek je realizovaná pomocou písomného popisu. Na vylepšenie tohto problému sú taktiež navrhnuté diagramy úloh. Ten je využitý na ďalšie špecifikovanie a to navigačného modelu a diagramu tried na základe predom spomenutých požiadaviek. 
+
+Silné a slabé stránky: Hlavnou silnou stránkou WSDM metódy je, že berie veľký ohľad na požívateľa a na jeho požiadavky. Toto je veľlmi dôležitý aspekt v oblasti vývinu webových aplikácií. Táto metóda taktiež popisuje definíciu požiadaviek od najzákladnejších po konkrétnejšie (charakterizácia publika). Využitie písomného popísanie požiadaviek je veľlmi flexibilný spôsob, ktorý je doplnený o podrobnejší diagram úloh, za účelom definovania navigačného modelu a diagramu tried.\\
+Nanešťastie, písomný popis s využítím klasického jazyka znovu spadá aj pod nevýhody tejto metódy. Z MDD pohľadu je možné tretnúť sa s určitou mierou nepresnosti, ktorá vychádza z tohto neformálneho popisu.
 
 \begin{figure*}[tbh]
 \centering
