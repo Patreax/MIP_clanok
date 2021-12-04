@@ -64,6 +64,13 @@ Koncepčné modely webových aplikácií špecifikujú jej kompozíciu a navigá
 \\
 Možno ešte niečo napíšem o koncepčných modeloch
 
+\begin{figure*}[tbh]
+\centering
+\includegraphics[scale=0.4]{./Visuals/OOHDM Conceptual Model.pdf}
+\caption{Príklad koncepčného modelu pre obchod s CD (upravený\cite{Schwabe:OOHDM}).}
+\label{Conceptual OOHDM Model}
+\end{figure*}
+
 \section{Prehľad MDWE metód}
 
 Nasleduje sekcia venujúca sa popísaniu troch vybraných MDWE (Model-Driven Web Development) metód. Tými sú, ako bolo spomenuté: OOHDM, OOWS, WSDM. Obrázok č.1 predstavuje prehľad študovaných metód a chronologické usporiadnie podľa roku prvej publikácie. Tieto metódy ale nebudú popísané chronologicky, ale podľa ich základnej vnútornej podobnosti. Preto budú najprv popísané objektovo-orientované metódy (OOHDM a OOWS) a potom metóda WSDM. Tento článok analyzuje hlavne tieto metódy, pretože predstavujú techniky špeciálne vytvorené na špecifikovanie potrieb webových aplikácií.\cite{Valderas:MDDE}\\
@@ -116,20 +123,26 @@ Vývojový proces tohto prístupu je rozdelený do piatich hlavných fáz:\\
 
 \section{Porovnanie MDWE metód} \label{ina}
 
-Táto časť je dedikovaná porovnaniu analyzozavých metód a to OOHDM, OOWS a WSDM. Článok sa zameriava na špecifikovanie piatich hlavných elementov pri každej metóde. Týmito elementami sú funkčné požiadavky, dátové požiadavky, navigačné požiadavky, ohodnotenie z MDD perspektívy a ohodnotenie silných a slabých stránok danej metódy. Funkčné, dátové a navigačné požiadavky budú analyzované na základe špecifických kritérií, ktoré sú rôzne pre všetky typy požiadaviek. Tieto kritériá sú nasledovné:			FP3=FP5    DP3=DP1    DP4=DP2    NR4=NP3\\
-Funkčné požiadavky:\\
-- overenie vstupov -FP1\\						
-- presná postupnosť operácií - FP2\\
-- vzťahy medzi vstupmi a výstupmi -FP3\\
-Dátové požiadavky:\\
-- možnosti prístupu k dátam - DP1\\
-- dátové entity - DP2\\
-Navigačné požiadavky:\\
-- vyobrazenie informácií - NP1\\
-- možnosti navigácie k informáciám - NP2\\
-- funkčnosť spojená s informáciami - NP3\\
+Táto časť je dedikovaná porovnaniu analyzozavých metód a to OOHDM, OOWS a WSDM. Článok sa zameriava na špecifikovanie piatich hlavných elementov pri každej metóde. Týmito elementami sú funkčné požiadavky, dátové požiadavky, navigačné požiadavky, ohodnotenie z MDD perspektívy a ohodnotenie silných a slabých stránok danej metódy. Funkčné, dátové a navigačné požiadavky budú analyzované na základe špecifických kritérií, ktoré sú rôzne pre všetky typy požiadaviek. Tieto kritériá sú nasledovné:\\\\
+Funkčné požiadavky:
+\begin{itemize}
+\item overenie vstupov - FP1					
+\item presná postupnosť operácií - FP2
+\item vzťahy medzi vstupmi a výstupmi - FP3
+\end{itemize}
+Dátové požiadavky:
+\begin{itemize}
+\item možnosti prístupu k dátam - DP1
+\item dátové entity - DP2
+\end{itemize}
+Navigačné požiadavky:
+\begin{itemize}
+\item vyobrazenie informácií - NP1
+\item možnosti navigácie k informáciám - NP2
+\item funkčnosť spojená s informáciami - NP3
+\end{itemize}
 
-Tieto kritériá môžu byť buď podporované, čiastočne podporované alebo nepodporované. Prehľad týchto kritérií sa bude nachádzať vo forme tabuľky na konci každej metódy. Toto porovnanie je redukované porovanie toho, ktoré sa nachádza v článku ''A Survey of Requirements Specification in Model-Driven
+Tieto kritériá môžu byť buď podporované, čiastočne podporované alebo nepodporované. Prehľad týchto kritérií sa nachádza vo forme tabuľky na konci každej metódy. Toto porovnanie je redukované porovanie toho, ktoré sa nachádza v článku ''A Survey of Requirements Specification in Model-Driven
 Development of Web Applications" od autorov Pedro Valeras a Vicente Pelechano \cite{Valderas:MDDE}.
 
 \subsection{OOHDM}
@@ -146,6 +159,12 @@ Nevýhodou je, že sú popísané pomocou klasického jazyka, bez predom definov
 Silné a slabé stránky: Hlavná silná stránka tohto prístupu je založená na využívaní dobre-známeho ''use case'' popisu, ktorý povoľuje definovanie funkčných požiadaviek webových aplikácií vďaka pomoci UID diagramov. Tie povoľujú vizuálny popis navigačných a dátových požiadaviek. OOHDM je tiež jedna z mála metód, ktoré poskytujú spomenutý postup špeciálne sústredený na webové aplikácie. 
 Silná stránka tejto metódy je taktiež jej slabou stránkou, a to v tom zmysle, že iba UID technika je definovaná pre MDD použitie. Usmernenia na preberanie koncepčných modelov sú taktiež zahrnuté iba v UID diagramoch. \cite{Valderas:MDDE}\\
 
+\begin{figure*}[tbh]
+\centering
+\includegraphics[scale=0.8]{./Visuals/Tabulka OOHDM.png}
+\caption{Prehľad kritérií OOHDM metódy(upravený\cite{Valderas:MDDE}).}
+\label{Tabulka OOHDM}
+\end{figure*}
 
 \subsection{OOWS}
 
@@ -159,6 +178,13 @@ Ohodnotenie z MDD pespektívy: Techniky navrhované OOWS metódou na špecifikov
 
 Silné a slabé stránky: Hlavnou silnou stránkou tejto metódy je, že je špeciálne vytvorená na špecifikovanie webových aplikácií. Taktiež ponúka nové techniky orientované na podporu aspektov súvisiacich s webovými apikáciami, ako napríklad navigácia. Ďalšia výhoda tejto metódy je, že navigačné schopnosti sú popísané globálne. Toto sa líši od iných techník, ktoré sú založené na takzvaných prípadoch použitia (use cases), ktoré podporujú iba obmedzený pohľad na aspekt navigácie, keďže navigačné požiadavky sú popísané jednotlivo pre všetky prípady využitia. Neposlednou výsadou tejto metódy je to, že je plne orientovaná na podporu MDD prístupov webových aplikácií.\\
 Hlavnou nevýhodou tejto metódy je ale možnosť priveľkej zložitosti požiadavkových modelov. Na dôkladné popísanie týchto modelov je potrebné mnoho zložitých elementov. Taktiež je vhodné spomenúť, že diagram aktivít je doplnený o grafické elementy, ktoré nepochádzajú priamo zo štandardného UML diagramu aktivít. Preto tento diagram môže vyzerať zložito pre netrénovaných ľudí. \cite{Valderas:MDDE}
+
+\begin{figure*}[tbh]
+\centering
+\includegraphics[scale=0.8]{./Visuals/Tabulka OOWS.png}
+\caption{Prehľad kritérií OOWS metódy(upravený\cite{Valderas:MDDE}).}
+\label{Tabulka OOWS}
+\end{figure*}
 
 \subsection{WSDM}
 
@@ -175,13 +201,21 @@ Nanešťastie, písomný popis s využítím klasického jazyka znovu spadá aj 
 
 \begin{figure*}[tbh]
 \centering
-\includegraphics[scale=0.4]{./Visuals/OOHDM Conceptual Model.pdf}
-\caption{Príklad koncepčného modelu pre obchod s CD (upravený\cite{Schwabe:OOHDM}).}
-\label{Conceptual OOHDM Model}
+\includegraphics[scale=0.8]{./Visuals/Tabulka WSDM.png}
+\caption{Prehľad kritérií WSDM metódy(upravený\cite{Valderas:MDDE}).}
+\label{Tabulka WSDM}
 \end{figure*}
 
-\section{Popis MDA prístupu}
+\paragraph{Porovnanie}
 
+Táto časť predstavuje porovnanie popísaných metód. Tieto boli vyššie popísané na základe funkčných, dátových a navygačných požiadaviek, ako aj z MDD perspektívy. Na konci každej metódy sa taktiež nacháza prehľad ich silných a slabých stránok.\\
+Na začiatok je nutné povedať, že všetky z predošle spomenutých metód boli v minulosti využité na vývoj webových aplikácií a sú na ne aj zamerané. Všetky metódy väčšinou podporujú vštetky analyzované kritériá, aj keď niektoré len čiastočne. Prehľad týchto kritérií sa nachádza v tabuľke na konci popisu každej metódy. Samozrejme každá zo spomenutých metód má svoje plusy a mínusy, a sú zamerané na odlišné aspekty vrámci vývinu webových aplikácií.\\
+OOHDM je najstaršia metóda zo všetkých analyzovaných. Je založená na objektovo-orientovanom prístupe a predstavuje techniku separácie určitých aspektov webových aplikácií od ostatných. Pre podporu analyzovaných požiadaviek využíva prípady použitia (use cases) a UID diagramy. Väčšinu kritérií podporuje a zaostáva iba pri dátových požiadavkách. \\
+OOWS je o niečo mladšia metóda. Ide o rozšírenie objektovo-orientovaného prístupu pri webových aplikáciách a podporuje automatické generovanie webových rozhraní. Na podporu analyzovaných požiadaviek využíva hlavne diagram aktivít a tiež informačnú šablónu. Táto metóda plne podporuje všetky analyzované kritériá. Ide o veľmi užitočnú metódu, ktorou jedinou nevýhodou je zložitosť požiadavkových modelov. \\
+Poslednou analyzovanou metódou je WSDM. Táto metóda vznikla medzi OOHDM a OOWS metódou a nie je založená na objektovo-oriantovanom prístupe. WSDM sa zameriava na používateľa a považuje ho za centum svojho prítsupu. Na podporu analyzovaných požiadaviek využíva klasický jazyk. Taktiež podporuje väčšinu analyzovaných kritérií, no niektoré iba čiastočne. Jej výhodou je práve spomínaný ohľad na používateľa a na jeho požiadavky. Nevýhodou je ale využitie klasického neformálneho jazyka, ktorý môže často viesť k miere nepresnosti pri definovaný požiadaviek. \cite{Valderas:MDDE}\\\\
+Ďalej nasleduje predstavenie a popis MDA prístupu. 
+
+\section{Popis MDA prístupu}
 
 MDA prístup je široko využívaný softvérovými inžiniermi pri vyvíjaní webových aplikácií.\\
 Častokrát, pri MDD metódach, je interakcia medzi používateľom a systémom nie presne špecifikovaná. Často je rozhranie systému generované pre rozličné platformy (stolný počítač, web, mobilný telefón..) z rovnakého modelu. Tým sa vytvára priestor pre rozličné komplikácie spojené so systémovým rozhraním. V tom prípade je nutné klásť väčší dôraz na presnejšie špecifikovanie koncepčných modelov. Preto je v tomto prípade MDA prístup veľmi zaujímavým riešením.\cite{Valverde:MDA}
