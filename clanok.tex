@@ -230,7 +230,7 @@ OOWS metóda je v tejto časti vynechaná, pretože implementácia MDA je pri ob
 
 \subsection{OOHDMDA}
 
-OOHDMDA je modelovacia metóda, ktorá kombinuje vlastnosti OOHDM metódy a prvky MDA prístupu. Jej hlavným cieľom je transformácia koncepčného modelu základnej metódy na PIM a následná transformácia na PSM. Tieto transformácie sú pomerne zložité procesy. Preto budú popísané o niečo jednoduhším spôsobom. Prvou časťou je generovanie PIM modelu. PIM model je vytvorený z dizajnového modelu obsiahnutého v základnej metóde OOHDM, ktorý je potom rozšírený o ďalšie aspekty (Behavioral Semnatics Model). Ďalej nasleduje transformáca na PSM model. Tá je sprevádzaná rôznymi špecializovanýmii nástrojmi ako napríklad XMINavigationalTransformer, ktorý je spomenutý v článku od Hansa Alberta Schmida.\cite{Schmid:OOHDMDA}. Konečným výsledkom tejto metódy je webová aplikácia založená na sevrltet programe. Ide jednoducho o program, ktorý odpovedá na sieťové požiadavky, najčastejšie HTTP požiadavky. Čiže OOHDMDA generuje servlet-založené webové aplikácie z tradičnej metódy.\cite{Schmid:OOHDMDA}
+OOHDMDA je modelovacia metóda, ktorá kombinuje vlastnosti OOHDM metódy a prvky MDA prístupu. Jej hlavným cieľom je transformácia koncepčného modelu základnej metódy na PIM a následná transformácia na PSM. Tieto transformácie sú pomerne zložité procesy. Preto budú popísané o niečo jednoduhším spôsobom. Prvou časťou je generovanie PIM modelu. PIM model je vytvorený z dizajnového modelu obsiahnutého v základnej metóde OOHDM, ktorý je potom rozšírený o ďalšie aspekty (Behavioral Semnatics Model). Ďalej nasleduje transformáca na PSM model. Tá je sprevádzaná rôznymi špecializovanýmii nástrojmi ako napríklad XMINavigationalTransformer, ktorý je spomenutý v článku od Hansa Alberta Schmida\cite{Schmid:OOHDMDA}. Konečným výsledkom tejto metódy je webová aplikácia založená na sevrltet programe. Ide jednoducho o program, ktorý odpovedá na sieťové požiadavky, najčastejšie HTTP požiadavky. Čiže OOHDMDA generuje servlet-založené webové aplikácie z tradičnej metódy.\cite{Schmid:OOHDMDA}
 
 \subsection{WSDMDA}
 
@@ -239,7 +239,7 @@ Táto metóda prerába koncepčný model tradičnej metódy, za účelom využit
 
 \paragraph{Porovnanie}
 
-Spomenuté metódy sa od seba líšia ako v základnom, tak aj v tomto rozšírenom tvare. Tu je ale možné presne vidieť ich rozdielne prístupy k MDA paradigme. Prvá fáza je rovnaká, transformácia koncepčného modelu na PIM model. Kým OOHDMDA metóda ku koncepčnému modelu pridáva ďalší model, špecificky BMS (Behavioral Semantics Model), tak WSDMDA sa snaží upriamiť ešte väčšiu pozornosť na používateľa pridaním používateľského profilu. Neskôr nasleduje transformácia na PSM model. Tá sa taktiež u oboch kandidátov líši. OOHDMDA využíva rôzne nástroje za účelom prerobenia PIM sa sevrlet založenú platformu. Tieto transformácie taktiež zahrňujú navigačné a koncepčné transformácie\cite{Mukhtar:WSDMDA}. Na druhej strane WSDMDA vytvára všeobecný PSM model, ktorý presne špecifikuje technologické požiadavky danej platformy. Obrázok č.3 slúži ako tabuľka na garfické zhrnutie tohto porovnania.
+Spomenuté metódy sa od seba líšia ako v základnom, tak aj v tomto rozšírenom tvare. Tu je ale možné presne vidieť ich rozdielne prístupy k MDA paradigme. Prvá fáza je rovnaká, transformácia koncepčného modelu na PIM model. Kým OOHDMDA metóda ku koncepčnému modelu pridáva ďalší model, špecificky BMS (Behavioral Semantics Model), tak WSDMDA sa snaží upriamiť ešte väčšiu pozornosť na používateľa pridaním používateľského profilu. Neskôr nasleduje transformácia na PSM model. Tá sa taktiež u oboch kandidátov líši. OOHDMDA využíva rôzne nástroje za účelom prerobenia PIM sa sevrlet založenú platformu. Tieto transformácie taktiež zahrňujú navigačné a koncepčné transformácie\cite{Mukhtar:WSDMDA}. Na druhej strane WSDMDA vytvára všeobecný PSM model, ktorý presne špecifikuje technologické požiadavky danej platformy. Obrázok č.6 slúži ako tabuľka na garfické zhrnutie tohto porovnania.
 
 \begin{figure*}[tbh]
 \centering
@@ -250,12 +250,12 @@ Spomenuté metódy sa od seba líšia ako v základnom, tak aj v tomto rozšíre
 
 \section{Zhrnutie}
 
-Tu napíšem zhrnutie
+Primárnou úlohou tejto práce je popísať a porovnať metódy využívané pri vývoji webových aplikácií. Sekundárnym cieľom je ale priblížiť problematiku modelovania v softvérovom inžinierstve.\\
+Analyzované metódy boli OOHDM, OOWS a WSDM. V článku bol taktiež spomenutý populárny MDA prístup spolu s jeho implementáciou na vylepšenie spomenutých metód. Dozvedeli sme sa ako jednotlivé metódy fungujú, aké majú požiadavky a čo je cieľom hybridných metód využívajúcich MDA prístup. Taktiež boli osobitne porovnané tradičné a hybridné metódy. Z týchto porovnaní vyplívajú viaceré fakty. Vieme, že všetky metódy sú zamerané na vývoj webových aplikácií a líšia sa iba v prístupe realizácie tohto cieľa. Rovnako sme zistili, aký užitočný je MDA prístup a aké je jeho využitie. Ide mimovšetkého o transformáciu modelov za účelom presnejšieho špecifikovania technologických požiadaviek systému. Na to slúžia hybridné metódy ako napríklad OOHDMDA a WSDMDA, ktoré kombinujú techniky tradičných metód a obohacujú ich o tie, ktoré sú spomenuté v MDA paradigme.\\
+Tento článok preto predstavuje prehľad týchto metód spolu s MDA sprístupom a poukazuje na silné a slabé stránky každej metódy.\\
+Budúce práce budú zamerané na popis a porovananie ďalších metód, využívaných pri vývoji webových aplikácií, ako aj na nové techniky a technológie využívané v tomto obore, ktorý sa veľmi rýchlo rozvíja. 
 
 %\section{Bibliografia}
-
-
-
 
 
 %\acknowledgement{Ak niekomu chcete poďakovať\ldots}
