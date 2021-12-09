@@ -9,9 +9,9 @@
 \usepackage{graphicx}
 \usepackage{url} % príkaz \url na formátovanie URL
 \usepackage{hyperref} % odkazy v texte budú aktívne (pri niektorých triedach dokumentov spôsobuje posun textu)
-
 \usepackage{cite}
 %\usepackage{times}
+\usepackage{wrapfig}
 
 \pagestyle{headings}
 
@@ -109,6 +109,7 @@ Vývojový proces obsiahnutý v tomto prístupe je rozdelený na tri hlavné fá
 \end{enumerate}
 - Generácia riešení. V poslednej fáze je webová aplikácia automaticky generovaná z modelov spomenutých v predchádzajúcich fázach. Na dosiahnutie tohto cieľa sú ale potrebné rôzne nástroje.\cite{Valderas:MDDE}
 
+
 \subsection{WSDM: Web Site Design Method} \label{WSDM}
 
 Nakoniec nasleduje posledná metóda s názvom WSDM. Táto sa od predošlých líši, mimo iného, aj v tom, že nie je založená na objektovo-orientovanom prístupe.\\
@@ -120,6 +121,7 @@ Vývojový proces tohto prístupu je rozdelený do piatich hlavných fáz:\\
 - Modelovanie publika. V druhej fáze sú špecifikovaní používatelia a sú následne rozdelení do skupín. Toto je realizované za účelom študovania systémových požiadaviek na základe každej skupiny používateľov.\\
 - Koncepčný dizajn. V tretej fáze je vytvorený diagram tried a navigačný model. Diagram tried reprezentuje statický model systému a navigačný model popisuje možnosti navigácie vo webovej aplikácii.\\
 - Implementačný dizajn. Počas štvrtej fázy sú definované koncepčné dizajnové modely. Tieto modely sú následne doplnené o informácie, potrebné na samotnú implementáciu. Takéto informácie sú napríklad model štruktúry stránky alebo prezentačný model.\cite{Valderas:MDDE}\\
+
 
 \section{Porovnanie MDWE metód} \label{ina}
 
@@ -159,12 +161,12 @@ Nevýhodou je, že sú popísané pomocou klasického jazyka, bez predom definov
 Silné a slabé stránky: Hlavná silná stránka tohto prístupu je založená na využívaní dobre-známeho ''use case'' popisu, ktorý povoľuje definovanie funkčných požiadaviek webových aplikácií vďaka pomoci UID diagramov. Tie povoľujú vizuálny popis navigačných a dátových požiadaviek. OOHDM je tiež jedna z mála metód, ktoré poskytujú spomenutý postup špeciálne sústredený na webové aplikácie. 
 Silná stránka tejto metódy je taktiež jej slabou stránkou, a to v tom zmysle, že iba UID technika je definovaná pre MDD použitie. Usmernenia na preberanie koncepčných modelov sú taktiež zahrnuté iba v UID diagramoch. \cite{Valderas:MDDE}\\
 
-\begin{figure*}[tbh]
+\begin{wrapfigure}{l}{0.5\textwidth}
 \centering
-\includegraphics[scale=0.8]{./Visuals/Tabulka OOHDM.png}
+\includegraphics[scale=0.5]{./Visuals/Tabulka OOHDM.png}
 \caption{Prehľad kritérií OOHDM metódy(upravený\cite{Valderas:MDDE}).}
 \label{Tabulka OOHDM}
-\end{figure*}
+\end{wrapfigure}
 
 \subsection{OOWS}
 
@@ -179,12 +181,12 @@ Ohodnotenie z MDD pespektívy: Techniky navrhované OOWS metódou na špecifikov
 Silné a slabé stránky: Hlavnou silnou stránkou tejto metódy je, že je špeciálne vytvorená na špecifikovanie webových aplikácií. Taktiež ponúka nové techniky orientované na podporu aspektov súvisiacich s webovými apikáciami, ako napríklad navigácia. Ďalšia výhoda tejto metódy je, že navigačné schopnosti sú popísané globálne. Toto sa líši od iných techník, ktoré sú založené na takzvaných prípadoch použitia (use cases), ktoré podporujú iba obmedzený pohľad na aspekt navigácie, keďže navigačné požiadavky sú popísané jednotlivo pre všetky prípady využitia. Neposlednou výsadou tejto metódy je to, že je plne orientovaná na podporu MDD prístupov webových aplikácií.\\
 Hlavnou nevýhodou tejto metódy je ale možnosť priveľkej zložitosti požiadavkových modelov. Na dôkladné popísanie týchto modelov je potrebné mnoho zložitých elementov. Taktiež je vhodné spomenúť, že diagram aktivít je doplnený o grafické elementy, ktoré nepochádzajú priamo zo štandardného UML diagramu aktivít. Preto tento diagram môže vyzerať zložito pre netrénovaných ľudí. \cite{Valderas:MDDE}
 
-\begin{figure*}[tbh]
+\begin{wrapfigure}{l}{0.5\textwidth}
 \centering
-\includegraphics[scale=0.8]{./Visuals/Tabulka OOWS.png}
+\includegraphics[scale=0.5]{./Visuals/Tabulka OOWS.png}
 \caption{Prehľad kritérií OOWS metódy(upravený\cite{Valderas:MDDE}).}
 \label{Tabulka OOWS}
-\end{figure*}
+\end{wrapfigure}
 
 \subsection{WSDM}
 
@@ -199,12 +201,12 @@ Ohodnotenie z MDD perspektívy: Špecifikácia požidaviek navrhnutá WSDM metó
 Silné a slabé stránky: Hlavnou silnou stránkou WSDM metódy je, že berie veľký ohľad na požívateľa a na jeho požiadavky. Toto je veľlmi dôležitý aspekt v oblasti vývinu webových aplikácií. Táto metóda taktiež popisuje definíciu požiadaviek od najzákladnejších po konkrétnejšie (charakterizácia publika). Využitie písomného popísanie požiadaviek je veľlmi flexibilný spôsob, ktorý je doplnený o podrobnejší diagram úloh, za účelom definovania navigačného modelu a diagramu tried.\\
 Nanešťastie, písomný popis s využítím klasického jazyka znovu spadá aj pod nevýhody tejto metódy. Z MDD pohľadu je možné stretnúť sa s určitou mierou nepresnosti, ktorá vychádza z daného neformálneho popisu. \cite{Valderas:MDDE}
 
-\begin{figure*}[tbh]
+\begin{wrapfigure}{l}{0.5\textwidth}
 \centering
-\includegraphics[scale=0.8]{./Visuals/Tabulka WSDM.png}
+\includegraphics[scale=0.5]{./Visuals/Tabulka WSDM.png}
 \caption{Prehľad kritérií WSDM metódy(upravený\cite{Valderas:MDDE}).}
 \label{Tabulka WSDM}
-\end{figure*}
+\end{wrapfigure}
 
 \paragraph{Porovnanie}
 
@@ -248,9 +250,15 @@ Spomenuté metódy sa od seba líšia ako v základnom, tak aj v tomto rozšíre
 \label{OOHDMDA VS WSDMDA}
 \end{figure*}
 
+\paragraph{Udržateľnosť a etika.}
+Udržateľnosť a etika sú dve zásadné slová v rámci softvérového inžinierstva.
+Udržateľnosť je neodmysliteľnou súčasťou života softvérového inžiniera. Ten mus vedieť vyvíjať softvér, ktorý je efektívny, spoľahlivý a univerzálny. Udržateľný rozvoj je taký, ktorý je funkčný v súčasnosti a dokáže byť využitý aj v budúcnosti. 
+Na druhej strane etika predkladá to, ako softvérový inžinier koná alebo by mal konať. Softvérový inžinier by sa mal správať podľa verejného záujmu. Taktiež musí prihliadať na to, aké správanie je najvhodnejšie pri práci s klientom a zamestnávateľom. No najdôležitejším princípom etiky je celoživotné vzdelávanie sa a preukazovanie ochoty učiť sa nové veci.
+
+
 \section{Zhrnutie}
 
-Primárnou úlohou tejto práce je popísať a porovnať metódy využívané pri vývoji webových aplikácií. Sekundárnym cieľom je ale priblížiť problematiku modelovania v softvérovom inžinierstve.\\
+Primárnou úlohou tejto práce je popísať a porovnať metódy využívané pri vývoji webových aplikácií.
 Analyzované metódy boli OOHDM, OOWS a WSDM. V článku bol taktiež spomenutý populárny MDA prístup spolu s jeho implementáciou na vylepšenie spomenutých metód. Dozvedeli sme sa ako jednotlivé metódy fungujú, aké majú požiadavky a čo je cieľom hybridných metód využívajúcich MDA prístup. Taktiež boli osobitne porovnané tradičné a hybridné metódy. Z týchto porovnaní vyplívajú viaceré fakty. Vieme, že všetky metódy sú zamerané na vývoj webových aplikácií a líšia sa iba v prístupe realizácie tohto cieľa. Rovnako sme zistili, aký užitočný je MDA prístup a aké je jeho využitie. Ide mimovšetkého o transformáciu modelov za účelom presnejšieho špecifikovania technologických požiadaviek systému. Na to slúžia hybridné metódy ako napríklad OOHDMDA a WSDMDA, ktoré kombinujú techniky tradičných metód a obohacujú ich o tie, ktoré sú spomenuté v MDA paradigme.\\
 Tento článok preto predstavuje prehľad týchto metód spolu s MDA sprístupom a poukazuje na silné a slabé stránky každej metódy.\\
 Budúce práce budú zamerané na popis a porovananie ďalších metód, využívaných pri vývoji webových aplikácií, ako aj na nové techniky a technológie využívané v tomto obore, ktorý sa veľmi rýchlo rozvíja. 
