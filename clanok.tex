@@ -23,7 +23,7 @@
 	{\small \texttt{xtomco@stuba.sk}}
 	}
 
-\date{\small 6. novembra 2021} 
+\date{\small 14. decembra 2021} 
 
 
 
@@ -34,9 +34,9 @@
 \begin{abstract}
 %\ldots
 Modely a modelovacie nástroje sú veľmi často používané softvérovými inžiniermi na vyjadrenie ich myšlienok počas vývoja softvéru. Tieto modely vedú k definícii modelovo-založeného vývojového procesu (MDD: Model-Driven Developement). Počas celej histórie softvérového inžinierstva boli pridávané nové využitia pre modely. Potenciálne benefity využívania modelov sú výrazne väčšie v softvérovej, ako v inej inžinierskej disciplíne.\cite{Selic:Pragmatics} V MDE (Model-Driven Engineering) sú modely považované za hlavný vývojový artefakt na tvorbu softvéru. \cite{Gottardi:Metamodels}\\
-Z toho môžme vyvodiť, že dôležitosť modelov v MDD je neodmysliteľná a je dôležité vedieť s nimi patrične narábať. 
+Z toho je možné vyvodiť, že dôležitosť modelov v MDD je neodmysliteľná a je dôležité vedieť s nimi patrične narábať. 
 Tento článok sa zaoberá popisom a porovnaním MDD metód, ktoré sú esenciálne pre správne a dlhodobé fungovanie softvéru, ako aj pre jeho komplexnosť.
-Taktiež analyzuje techniky navrhované na špecifikovanie funkčných, dátových a navigačných požiadaviek, ako aj poskytnutých mechanizmov na automatické preloženie týchto požiadaviek do koncepčných modelov. Hlavným cieľom tohto článku je preto pohľad a tieto metódy, využívaných vo vývoji webových aplikácií za účelom poukázania na ich silné a slabé stránky.\cite{Valderas:MDDE}\\
+Taktiež analyzuje techniky navrhované na špecifikovanie funkčných, dátových a navigačných požiadaviek, ohodnotenie z MDD perspektívy a popisuje silné a slabé stránky každej metódy. Hlavným cieľom tohto článku je preto pohľad a tieto metódy, využívaných vo vývoji webových aplikácií za účelom poukázania na ich silné a slabé stránky.\cite{Valderas:MDDE}\\
 \\
 Kľúčové slová: koncepčný model, modelmi riadený vývoj, metódy, webová aplikácia, modelmi riadené webové inžinierstvo, softvér
 \\
@@ -50,19 +50,15 @@ Kľúčové slová: koncepčný model, modelmi riadený vývoj, metódy, webová
 \section{Úvod}
 
 Modelmi riadený vývoj (MDD: Model-Driven Developement) sa stáva stále viac a viac dôležitou a využívanou metódou vrámci softvérového inžinierstva. 
-MDD tvrdí, že softvérové systémy musia byť vyvíjané pomocou modelov. MDD proces zvyčajne začína požiadavkovou fázou, v ktorej sa definujú požiadavkové modely, z ktorých následne vzikne jeden alebo viacero koncepčných modelov~\ref{KM}. Tie majú za úlohu popísať systém bez prihliadnutia na technologické aspekty softvéru a sú neskôr využité v analytickej fáze\cite{Valderas:MDDE}. Práve týmto modelom a metódam, v ktorých su obsiahnuté,  je venovaný tento článok. Presnejšie porovnaniu jednotlivých metód a koncepčných metód z nich pozostavujúcich. Tento článok sa zaoberá popísaním rôznych MDWE (Model-Driven Web Engineering) metód. Tieto metódy a koncepčné modely článok porovnáva z pohľadu MDD, ako aj z pohľadu funkcionality, práce s dátami a navigácie v rámci webových aplikácií a požiadaviek používateľa na spomenutých stránkach. V dnešnej dobe existuje enormné množstvo metód zaoberajúcich sa vývojom webových aplikácií. Preto by si popísanie všetkých metód dopodrobna vyžadovalo príliš veľké úsilie. Tento čánok sa preto zaoberá len redukovanou množinou metód, aby bolo možné sa im viac dopodrobna venovať. Metódy, ktorým sa článok primárne zaoberá sú OOHDM(Obejct-Oriented Hypermedia Design Model), OOWS(Object Oriented Web Solutions) a WSDM(Web Site Design Method). Každá z týchto metód predstavuje koncepčné modely, ktoré nám umožnujú popísať webové aplikácie technologicky nezávislým spôsobom. "Tieto metódy boli úspešne aplikované vo vývoji viacerých webových aplikácií, čo je dôkazom toho, že implementácia konštruovania webových aplikácií pomocou koncepčných modelov a ich neskoršie prepísanie do kódu je možné".\cite{Valderas:MDDE}\\
+MDD tvrdí, že softvérové systémy musia byť vyvíjané pomocou modelov. MDD proces zvyčajne začína požiadavkovou fázou, v ktorej sa definujú požiadavkové modely, z ktorých následne vzikne jeden alebo viacero koncepčných modelov~\ref{KM}. Tie majú za úlohu popísať systém bez prihliadnutia na technologické aspekty softvéru a sú neskôr využité v analytickej fáze\cite{Valderas:MDDE}. Práve na tieto modely a metódy, v ktorých su obsiahnuté,  sa tento článok zameriava. Presnejšie porovnaniu jednotlivých metód a koncepčných metód z nich pozostavujúcich. Tento článok sa zaoberá popísaním rôznych MDWE (Model-Driven Web Engineering) metód. V dnešnej dobe existuje enormné množstvo metód zaoberajúcich sa vývojom webových aplikácií. Preto by si popísanie všetkých metód dopodrobna vyžadovalo príliš veľké úsilie. Tento čánok sa preto zaoberá len redukovanou množinou metód, aby bolo možné sa im viac dopodrobna venovať. Metódy, ktorými sa článok primárne zaoberá sú OOHDM(Obejct-Oriented Hypermedia Design Model), OOWS(Object Oriented Web Solutions) a WSDM(Web Site Design Method). Každá z týchto metód predstavuje koncepčné modely, ktoré nám umožnujú popísať webové aplikácie technologicky nezávislým spôsobom. "Tieto metódy boli úspešne aplikované vo vývoji viacerých webových aplikácií, čo je dôkazom toho, že implementácia konštruovania webových aplikácií pomocou koncepčných modelov a ich neskoršie prepísanie do kódu je možné".\cite{Valderas:MDDE}\\
 
-Pre porozumenie tejto problematiky je veľmi dôležité vedieť, čo presne koncepčné modely predstavujú. Preto začne tento článok ich popisom. Ďalej bude článok pokračovať nasledovne. Sekcia 3 prezentuje prehľad popisovaných MDWE metód a ich bližší popis. Sekcia 4 sa venuje porovaniu týchto metód a koncepčným modelom z pohľadu MDD a funkcionality, práce s dátami a navigácie v rámci webových aplkácií. Sekcia 5 sa bližšie venuje popisu MDA (Model-Driven Architecture) prístupu, ktorý je neskôr využitý v nasledujúcej sekcii. Sekcia 6 je venovaná porovnávaniu metód a modelov využivajúcich spomenutý MDA prístup. Sekcia 7 slúži ako sumarizácia všetkého, čo sme zistili o danej problematike a posledná sekcia poskytuje prehľad bibliografie.\\
-\\
-Ešte spomeniem MDA prístup
-\\
+Pre porozumenie tejto problematiky je veľmi dôležité vedieť, čo presne koncepčné modely predstavujú. Preto začne tento článok ich popisom. Ďalej bude článok pokračovať nasledovne. Sekcia 3 prezentuje prehľad popisovaných MDWE metód a ich bližší popis. Sekcia 4 sa venuje porovaniu týchto metód z pohľadu MDD a funkcionality, práce s dátami a navigácie v rámci webových aplkácií. Sekcia 5 sa bližšie analyzuje MDA (Model-Driven Architecture) prístup, ktorý je neskôr využitý v nasledujúcej sekcii. Sekcia 6 je venovaná porovnávaniu metód a modelov využivajúcich spomenutý MDA prístup. V sekcii 7 sa nachádzajú reakcie na prednášky. Sekcia 8 slúži ako sumarizácia všetkého, čo sme zistili o danej problematike a posledná sekcia poskytuje prehľad bibliografie.\\
+
 \section{Koncepčné modely} \label{KM}
 
 Ako bolo spomenuté, táto sekcia sa venuje definícii koncepčných modelov. Pre správne porozumenie neskoršej problematiky je znalosť týchto modelov veľmi dôležitá.\\
-Koncepčné modely webových aplikácií špecifikujú jej kompozíciu a navigáciu v nej\cite{Gkatouna:Patterns}. Kompozícia web stránky definuje, ktoré stránky tvoria hypertext a ich internú kompozíciu, ako aj možnosti používateľa na zaobchádzanie so systémom. Navigácia definuje rôzne spôsoby, ako môžu byť dané stránky navzájom prepojené linkami, ale aj zobrazenie postupnosti stránok, na základe používania zo strany používateľa, a obsahom vyobrazeným na stránke. Inými slovami, koncepčné modely webových aplikácií špecifikujú organizáciu jej front-end rozhrania v podobe stránok, dizajnových elementov, ktoré sú prepojené linkami na uľahčenie navigácie na web stránke a manipulovania s ňou.\cite{Gkatouna:Patterns}
-\\
-\\
-Možno ešte niečo napíšem o koncepčných modeloch
+Koncepčné modely webových aplikácií špecifikujú jej kompozíciu a navigáciu v nej\cite{Gkatouna:Patterns}. Kompozícia web stránky definuje, ktoré stránky tvoria hypertext a ich internú kompozíciu, ako aj možnosti používateľa na zaobchádzanie so systémom. Navigácia definuje rôzne spôsoby, ako môžu byť dané stránky navzájom prepojené linkami, ale aj zobrazenie postupnosti stránok, na základe používania zo strany používateľa a obsahom vyobrazeným na stránke. Inými slovami, koncepčné modely webových aplikácií špecifikujú organizáciu jej front-end rozhrania v podobe stránok, dizajnových elementov, ktoré sú prepojené linkami na uľahčenie navigácie na web stránke a manipulovania s ňou.\cite{Gkatouna:Patterns}
+Obrázok č.1 predstavuje príklad koncepčného modelu pre obchod s CD.
 
 \begin{figure*}[tbh]
 \centering
@@ -73,7 +69,7 @@ Možno ešte niečo napíšem o koncepčných modeloch
 
 \section{Prehľad MDWE metód}
 
-Nasleduje sekcia venujúca sa popísaniu troch vybraných MDWE (Model-Driven Web Development) metód. Tými sú, ako bolo spomenuté: OOHDM, OOWS, WSDM. Obrázok č.1 predstavuje prehľad študovaných metód a chronologické usporiadnie podľa roku prvej publikácie. Tieto metódy ale nebudú popísané chronologicky, ale podľa ich základnej vnútornej podobnosti. Preto budú najprv popísané objektovo-orientované metódy (OOHDM a OOWS) a potom metóda WSDM. Tento článok analyzuje hlavne tieto metódy, pretože predstavujú techniky špeciálne vytvorené na špecifikovanie potrieb webových aplikácií.\cite{Valderas:MDDE}\\
+Nasleduje sekcia zaoberajúca sa popísaním troch vybraných MDWE (Model-Driven Web Development) metód. Tými sú, ako bolo spomenuté: OOHDM, OOWS, WSDM. Obrázok č.2 predstavuje prehľad študovaných metód a chronologické usporiadnie podľa roku prvej publikácie. Tieto metódy ale nebudú popísané chronologicky, ale podľa ich základnej vnútornej podobnosti. Preto budú najprv popísané objektovo-orientované metódy (OOHDM a OOWS) a potom metóda WSDM. Tento článok analyzuje hlavne tieto metódy, pretože predstavujú techniky špeciálne vytvorené na špecifikovanie potrieb webových aplikácií.\cite{Valderas:MDDE}\\
 
 \begin{figure*}[tbh]
 \centering
@@ -158,15 +154,16 @@ Navigačné požiadavky sú explicitne podporované touto metódou. Navrhovaná 
 Ohodnotenie z MDD perspektívy: Táto metóda prezentuje usmernenia za účelom pomoci pri definícii koncepčnej schémy z UID. Tie sú definované zo skupiny pravidiel, ktoré boli prednesené autormi Patrícia Vilain a Daniel Schwabe. Tieto pravidlá poukazujú na možnosť definovania koncepčnej schémy z UID diagramu. 
 Nevýhodou je, že sú popísané pomocou klasického jazyka, bez predom definovaných formálnych pravidiel. Preto často dochádza k mierne nejednoznačnosti. \cite{Valderas:MDDE}\\
 
-Silné a slabé stránky: Hlavná silná stránka tohto prístupu je založená na využívaní dobre-známeho ''use case'' popisu, ktorý povoľuje definovanie funkčných požiadaviek webových aplikácií vďaka pomoci UID diagramov. Tie povoľujú vizuálny popis navigačných a dátových požiadaviek. OOHDM je tiež jedna z mála metód, ktoré poskytujú spomenutý postup špeciálne sústredený na webové aplikácie. 
-Silná stránka tejto metódy je taktiež jej slabou stránkou, a to v tom zmysle, že iba UID technika je definovaná pre MDD použitie. Usmernenia na preberanie koncepčných modelov sú taktiež zahrnuté iba v UID diagramoch. \cite{Valderas:MDDE}\\
-
 \begin{wrapfigure}{l}{0.5\textwidth}
 \centering
 \includegraphics[scale=0.5]{./Visuals/Tabulka OOHDM.png}
 \caption{Prehľad kritérií OOHDM metódy(upravený\cite{Valderas:MDDE}).}
 \label{Tabulka OOHDM}
 \end{wrapfigure}
+
+Silné a slabé stránky: Hlavná silná stránka tohto prístupu je založená na využívaní dobre-známeho ''use case'' popisu, ktorý povoľuje definovanie funkčných požiadaviek webových aplikácií vďaka pomoci UID diagramov. Tie povoľujú vizuálny popis navigačných a dátových požiadaviek. OOHDM je tiež jedna z mála metód, ktoré poskytujú spomenutý postup špeciálne sústredený na webové aplikácie. 
+Silná stránka tejto metódy je taktiež jej slabou stránkou, a to v tom zmysle, že iba UID technika je definovaná pre MDD použitie. Usmernenia na preberanie koncepčných modelov sú taktiež zahrnuté iba v UID diagramoch. \cite{Valderas:MDDE}\\
+Obrázok č. 3 slúži ako prehľad analyzovaných kritérií pre OOHDM metódu.
 
 \subsection{OOWS}
 
@@ -178,15 +175,17 @@ Navigačné požiadavky sú taktiež explicitne podporované OOWS metódou. Tie 
 
 Ohodnotenie z MDD pespektívy: Techniky navrhované OOWS metódou na špecifikovanie požiadaviek sa skladajú z diagramov, ako napríklad diagram aktivít a z textovej šablóny.No aj keď ide o textovú šablónu, tak tá má striktne definovanú štruktúru. Ide o vylepšenie nedostatkov, s ktorými je možné stretnúť sa v OOHDM metóde. Toto precízne definovanie dovoľuje celému OOWS požiadavkovému modelu zapadnút do presného metamodelu, v ktorom sú popísané všetky koncepty potrebné na špecifikovanie podporovaných požiadaviek. \cite{Valderas:MDDE}\\
 
-Silné a slabé stránky: Hlavnou silnou stránkou tejto metódy je, že je špeciálne vytvorená na špecifikovanie webových aplikácií. Taktiež ponúka nové techniky orientované na podporu aspektov súvisiacich s webovými apikáciami, ako napríklad navigácia. Ďalšia výhoda tejto metódy je, že navigačné schopnosti sú popísané globálne. Toto sa líši od iných techník, ktoré sú založené na takzvaných prípadoch použitia (use cases), ktoré podporujú iba obmedzený pohľad na aspekt navigácie, keďže navigačné požiadavky sú popísané jednotlivo pre všetky prípady využitia. Neposlednou výsadou tejto metódy je to, že je plne orientovaná na podporu MDD prístupov webových aplikácií.\\
-Hlavnou nevýhodou tejto metódy je ale možnosť priveľkej zložitosti požiadavkových modelov. Na dôkladné popísanie týchto modelov je potrebné mnoho zložitých elementov. Taktiež je vhodné spomenúť, že diagram aktivít je doplnený o grafické elementy, ktoré nepochádzajú priamo zo štandardného UML diagramu aktivít. Preto tento diagram môže vyzerať zložito pre netrénovaných ľudí. \cite{Valderas:MDDE}
-
 \begin{wrapfigure}{l}{0.5\textwidth}
 \centering
 \includegraphics[scale=0.5]{./Visuals/Tabulka OOWS.png}
 \caption{Prehľad kritérií OOWS metódy(upravený\cite{Valderas:MDDE}).}
 \label{Tabulka OOWS}
 \end{wrapfigure}
+
+
+Silné a slabé stránky: Hlavnou silnou stránkou tejto metódy je, že je špeciálne vytvorená na špecifikovanie webových aplikácií. Taktiež ponúka nové techniky orientované na podporu aspektov súvisiacich s webovými apikáciami, ako napríklad navigácia. Ďalšia výhoda tejto metódy je, že navigačné schopnosti sú popísané globálne. Toto sa líši od iných techník, ktoré sú založené na takzvaných prípadoch použitia (use cases), ktoré podporujú iba obmedzený pohľad na aspekt navigácie, keďže navigačné požiadavky sú popísané jednotlivo pre všetky prípady využitia. Neposlednou výsadou tejto metódy je to, že je plne orientovaná na podporu MDD prístupov webových aplikácií.\\
+Hlavnou nevýhodou tejto metódy je ale možnosť priveľkej zložitosti požiadavkových modelov. Na dôkladné popísanie týchto modelov je potrebné mnoho zložitých elementov. Taktiež je vhodné spomenúť, že diagram aktivít je doplnený o grafické elementy, ktoré nepochádzajú priamo zo štandardného UML diagramu aktivít. Preto tento diagram môže vyzerať zložito pre netrénovaných ľudí. \cite{Valderas:MDDE}
+Obrázok č. 4 slúži ako prehľad analyzovaných kritérií pre OOWS metódu.
 
 \subsection{WSDM}
 
@@ -198,9 +197,6 @@ Navigačné požiadavky sú presne podporované touto metódou. Rozoberané krit
 
 Ohodnotenie z MDD perspektívy: Špecifikácia požidaviek navrhnutá WSDM metódou je založená na klasifikácii používateľov a na popise požiadaviek, spätých s každým používateľom. Definícia používateľských požiadaviek je realizovaná pomocou písomného popisu. Na vylepšenie tohto problému sú taktiež navrhnuté diagramy úloh. Ten je využitý na ďalšie špecifikovanie a to navigačného modelu a diagramu tried na základe predom spomenutých požiadaviek.  \cite{Valderas:MDDE}\\
 
-Silné a slabé stránky: Hlavnou silnou stránkou WSDM metódy je, že berie veľký ohľad na požívateľa a na jeho požiadavky. Toto je veľlmi dôležitý aspekt v oblasti vývinu webových aplikácií. Táto metóda taktiež popisuje definíciu požiadaviek od najzákladnejších po konkrétnejšie (charakterizácia publika). Využitie písomného popísanie požiadaviek je veľlmi flexibilný spôsob, ktorý je doplnený o podrobnejší diagram úloh, za účelom definovania navigačného modelu a diagramu tried.\\
-Nanešťastie, písomný popis s využítím klasického jazyka znovu spadá aj pod nevýhody tejto metódy. Z MDD pohľadu je možné stretnúť sa s určitou mierou nepresnosti, ktorá vychádza z daného neformálneho popisu. \cite{Valderas:MDDE}
-
 \begin{wrapfigure}{l}{0.5\textwidth}
 \centering
 \includegraphics[scale=0.5]{./Visuals/Tabulka WSDM.png}
@@ -208,13 +204,17 @@ Nanešťastie, písomný popis s využítím klasického jazyka znovu spadá aj 
 \label{Tabulka WSDM}
 \end{wrapfigure}
 
+Silné a slabé stránky: Hlavnou silnou stránkou WSDM metódy je, že berie veľký ohľad na požívateľa a na jeho požiadavky. Toto je veľlmi dôležitý aspekt v oblasti vývinu webových aplikácií. Táto metóda taktiež popisuje definíciu požiadaviek od najzákladnejších po konkrétnejšie (charakterizácia publika). Využitie písomného popísanie požiadaviek je veľlmi flexibilný spôsob, ktorý je doplnený o podrobnejší diagram úloh, za účelom definovania navigačného modelu a diagramu tried.\\
+Nanešťastie, písomný popis s využítím klasického jazyka znovu spadá aj pod nevýhody tejto metódy. Z MDD pohľadu je možné stretnúť sa s určitou mierou nepresnosti, ktorá vychádza z daného neformálneho popisu. \cite{Valderas:MDDE}
+Obrázok č. 5 slúži ako prehľad analyzovaných kritérií pre WSDM metódu.
+
 \paragraph{Porovnanie}
 
 Táto časť predstavuje porovnanie popísaných metód. Tieto boli vyššie popísané na základe funkčných, dátových a navygačných požiadaviek, ako aj z MDD perspektívy. Na konci každej metódy sa taktiež nacháza prehľad ich silných a slabých stránok.\\
 Na začiatok je nutné povedať, že všetky z predošle spomenutých metód boli v minulosti využité na vývoj webových aplikácií a sú na ne aj zamerané. Všetky metódy väčšinou podporujú vštetky analyzované kritériá, aj keď niektoré len čiastočne. Prehľad týchto kritérií sa nachádza v tabuľke na konci popisu každej metódy. Samozrejme každá zo spomenutých metód má svoje plusy a mínusy, a sú zamerané na odlišné aspekty vrámci vývinu webových aplikácií.\\
 OOHDM je najstaršia metóda zo všetkých analyzovaných. Je založená na objektovo-orientovanom prístupe a predstavuje techniku separácie určitých aspektov webových aplikácií od ostatných. Pre podporu analyzovaných požiadaviek využíva prípady použitia (use cases) a UID diagramy. Väčšinu kritérií podporuje a zaostáva iba pri dátových požiadavkách. \\
 OOWS je o niečo mladšia metóda. Ide o rozšírenie objektovo-orientovaného prístupu pri webových aplikáciách a podporuje automatické generovanie webových rozhraní. Na podporu analyzovaných požiadaviek využíva hlavne diagram aktivít a tiež informačnú šablónu. Táto metóda plne podporuje všetky analyzované kritériá. Ide o veľmi užitočnú metódu, ktorou jedinou nevýhodou je zložitosť požiadavkových modelov. \\
-Poslednou analyzovanou metódou je WSDM. Táto metóda vznikla medzi OOHDM a OOWS metódou a nie je založená na objektovo-oriantovanom prístupe. WSDM sa zameriava na používateľa a považuje ho za centum svojho prítsupu. Na podporu analyzovaných požiadaviek využíva klasický jazyk. Taktiež podporuje väčšinu analyzovaných kritérií, no niektoré iba čiastočne. Jej výhodou je práve spomínaný ohľad na používateľa a na jeho požiadavky. Nevýhodou je ale využitie klasického neformálneho jazyka, ktorý môže často viesť k miere nepresnosti pri definovaný požiadaviek. \cite{Valderas:MDDE}\\\\
+Poslednou analyzovanou metódou je WSDM. Táto metóda vznikla medzi OOHDM a OOWS metódou a nie je založená na objektovo-oriantovanom prístupe. WSDM sa zameriava na používateľa a považuje ho za centum svojho prítsupu. Na podporu analyzovaných požiadaviek využíva klasický jazyk. Taktiež podporuje väčšinu analyzovaných kritérií, no niektoré iba čiastočne. Jej výhodou je práve spomínaný ohľad na používateľa a na jeho požiadavky. Nevýhodou je ale využitie klasického neformálneho jazyka, ktorý môže často viesť k miere nepresnosti pri definovaný požiadaviek. \cite{Valderas:MDDE}\\
 Ďalej nasleduje predstavenie a popis MDA prístupu. 
 
 \section{Popis MDA prístupu}
@@ -254,7 +254,7 @@ Spomenuté metódy sa od seba líšia ako v základnom, tak aj v tomto rozšíre
 
 \paragraph{Udržateľnosť a etika.}
 Udržateľnosť a etika sú dve zásadné slová v rámci softvérového inžinierstva.
-Udržateľnosť je neodmysliteľnou súčasťou života softvérového inžiniera. Ten mus vedieť vyvíjať softvér, ktorý je efektívny, spoľahlivý a univerzálny. Udržateľný rozvoj je taký, ktorý je funkčný v súčasnosti a dokáže byť využitý aj v budúcnosti. 
+Udržateľnosť je neodmysliteľnou súčasťou života softvérového inžiniera. Ten mus vedieť vyvíjať softvér, ktorý je efektívny, spoľahlivý a univerzálny. Udržateľný rozvoj je taký, ktorý je funkčný v súčasnosti a dokáže byť využitý aj v budúcnosti.\\ 
 Na druhej strane etika predkladá to, ako softvérový inžinier koná alebo by mal konať. Softvérový inžinier by sa mal správať podľa verejného záujmu. Taktiež musí prihliadať na to, aké správanie je najvhodnejšie pri práci s klientom a zamestnávateľom. No najdôležitejším princípom etiky je celoživotné vzdelávanie sa a preukazovanie ochoty učiť sa nové veci.
 
 \paragraph{Spoločenské súvislosti.}
@@ -266,17 +266,15 @@ Informatika je síce mladá veda, no jej história je plná rôznych objavov, kt
 \section{Zhrnutie}
 
 Primárnou úlohou tejto práce je popísať a porovnať metódy využívané pri vývoji webových aplikácií.
-Analyzované metódy boli OOHDM, OOWS a WSDM. V článku bol taktiež spomenutý populárny MDA prístup spolu s jeho implementáciou na vylepšenie spomenutých metód. Dozvedeli sme sa ako jednotlivé metódy fungujú, aké majú požiadavky a čo je cieľom hybridných metód využívajúcich MDA prístup. Taktiež boli osobitne porovnané tradičné a hybridné metódy. Z týchto porovnaní vyplívajú viaceré fakty. Vieme, že všetky metódy sú zamerané na vývoj webových aplikácií a líšia sa iba v prístupe realizácie tohto cieľa. Rovnako sme zistili, aký užitočný je MDA prístup a aké je jeho využitie. Ide mimovšetkého o transformáciu modelov za účelom presnejšieho špecifikovania technologických požiadaviek systému. Na to slúžia hybridné metódy ako napríklad OOHDMDA a WSDMDA, ktoré kombinujú techniky tradičných metód a obohacujú ich o tie, ktoré sú spomenuté v MDA paradigme.\\
+Analyzované metódy boli OOHDM, OOWS a WSDM. Spomenutý bol taktiež populárny MDA prístup spolu s jeho implementáciou na vylepšenie spomenutých metód. Dozvedeli sme sa ako jednotlivé metódy fungujú, aké majú požiadavky a čo je úlohou hybridných metód využívajúcich MDA prístup. Taktiež boli osobitne porovnané základné a hybridné metódy. Z týchto porovnaní vyplívajú viaceré fakty. Je zrejmé, že všetky metódy sú zamerané na vývoj webových aplikácií a líšia sa iba v prístupe realizácie tohto cieľa. Rovnako sme zistili, aký užitočný je MDA prístup a aké je jeho využitie. Ide mimovšetkého o transformáciu modelov za účelom presnejšieho špecifikovania technologických požiadaviek systému. Na to slúžia hybridné metódy ako napríklad OOHDMDA a WSDMDA, ktoré kombinujú techniky tradičných metód a obohacujú ich o tie, ktoré sú spomenuté v MDA paradigme.\\
 Tento článok preto predstavuje prehľad týchto metód spolu s MDA sprístupom a poukazuje na silné a slabé stránky každej metódy.\\
-Budúce práce budú zamerané na popis a porovananie ďalších metód, využívaných pri vývoji webových aplikácií, ako aj na nové techniky a technológie využívané v tomto obore, ktorý sa veľmi rýchlo rozvíja. 
+Budúce práce budú zamerané na popis a porovananie ďalších metód, využívaných pri vývoji webových aplikácií, ako aj na nové techniky a technológie využívané v tomto obore softvérového vývinu. 
 
 %\section{Bibliografia}
 
 
 %\acknowledgement{Ak niekomu chcete poďakovať\ldots}
 
-
-% týmto sa generuje zoznam literatúry z obsahu súboru literatura.bib podľa toho, na čo sa v článku odkazujete
 \bibliography{literatura}
-\bibliographystyle{plain} % prípadne alpha, abbrv alebo hociktorý iný
+\bibliographystyle{plain} 
 \end{document}
